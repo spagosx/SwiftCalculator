@@ -9,7 +9,7 @@
 import UIKit
 
 class Brain: NSObject {
-   
+    
     var operand = String()
     var waitingForOperand = Bool()
     var waitingOperand = String()
@@ -26,13 +26,19 @@ class Brain: NSObject {
                 waitingOperand = originalOperand
                 waitingForOperand = true
             }
-        
+            
         case "+", "-", "x", "/" :
             if !waitingForOperand {
                 performWaitingOperation()
             }
             waitingOperand = operand
             waitingOperation = operation
+            
+        case "%":
+            if operand != "0" {operand = "\(operand.bridgeToObjectiveC().doubleValue/100)"}
+            
+        case "+/-":
+            if operand != "0" {operand = "\(operand.bridgeToObjectiveC().doubleValue * -1)"}
             
         default:
             break
@@ -50,20 +56,21 @@ class Brain: NSObject {
         switch waitingOperation {
             
         case "+":
-            operand = "\(toOperand.floatValue + toWaitingOperand.floatValue)"
+            operand = "\(toOperand.doubleValue + toWaitingOperand.doubleValue)"
             
         case "x":
-            operand = "\(toOperand.floatValue * toWaitingOperand.floatValue)"
+            operand = "\(toOperand.doubleValue * toWaitingOperand.doubleValue)"
             
         case "-":
             operand = waitingForOperand ?
-                "\(toOperand.floatValue - toWaitingOperand.floatValue)" :
-            "\(toWaitingOperand.floatValue - toOperand.floatValue)"
+                "\(toOperand.doubleValue - toWaitingOperand.doubleValue)" :
+            "\(toWaitingOperand.doubleValue - toOperand.doubleValue)"
             
         case "/":
             operand = waitingForOperand ?
-                "\(toOperand.floatValue / toWaitingOperand.floatValue)" :
-            "\(toWaitingOperand.floatValue / toOperand.floatValue)"
+                "\(toOperand.doubleValue / toWaitingOperand.doubleValue)" :
+            "\(toWaitingOperand.doubleValue / toOperand.doubleValue)"
+            
             
         default:
             waitingForOperand = true
