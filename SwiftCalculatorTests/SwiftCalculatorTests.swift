@@ -3,7 +3,7 @@
 //  SwiftCalculatorTests
 //
 //  Created by Spagnolo, Daniele on 06/06/2014.
-//  Copyright (c) 2014 Handstream. All rights reserved.
+//  Copyright (c) 2014 spagosx. All rights reserved.
 //
 
 import XCTest

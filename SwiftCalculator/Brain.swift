@@ -3,7 +3,7 @@
 //  SwiftCalculator
 //
 //  Created by Spagnolo, Daniele on 07/06/2014.
-//  Copyright (c) 2014 Handstream. All rights reserved.
+//  Copyright (c) 2014 spagosx. All rights reserved.
 //
 
 import UIKit
