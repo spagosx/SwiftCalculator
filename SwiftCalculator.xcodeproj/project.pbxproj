@@ -401,6 +401,7 @@
 				D2855F5D194232E0004EDB90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2855F5E194232E0004EDB90 /* Build configuration list for PBXNativeTarget "SwiftCalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -409,6 +410,7 @@
 				D2855F60194232E0004EDB90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
