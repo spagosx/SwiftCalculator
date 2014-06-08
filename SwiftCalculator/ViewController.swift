@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         
         let value = button.titleLabel.text
         
-        if inputLabel.text == "0" && value == "0" {
+        if displayText == "0" && value == "0" {
             isTypingNumber = false
             return
         }
@@ -63,7 +63,7 @@ class ViewController: UIViewController {
         let operation = button.titleLabel.text
         
         if (isTypingNumber) {
-            calcBrain.operand = inputLabel.text
+            calcBrain.operand = displayText
             isTypingNumber = false
         }
         
@@ -72,7 +72,7 @@ class ViewController: UIViewController {
                 calcBrain.operand = calcBrain.operand
                 isTypingNumber = false
             } else {
-                calcBrain.operand = inputLabel.text
+                calcBrain.operand = displayText
             }
         }
         
