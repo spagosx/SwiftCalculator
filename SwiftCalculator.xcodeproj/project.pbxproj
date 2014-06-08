@@ -12,6 +12,7 @@
 		D2855F4A194232E0004EDB90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2855F48194232E0004EDB90 /* Main.storyboard */; };
 		D2855F4C194232E0004EDB90 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2855F4B194232E0004EDB90 /* Images.xcassets */; };
 		D2855F58194232E0004EDB90 /* SwiftCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2855F57194232E0004EDB90 /* SwiftCalculatorTests.swift */; };
+		D2855F6419438535004EDB90 /* Brain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2855F6319438535004EDB90 /* Brain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		D2855F51194232E0004EDB90 /* SwiftCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2855F56194232E0004EDB90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2855F57194232E0004EDB90 /* SwiftCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCalculatorTests.swift; sourceTree = "<group>"; };
+		D2855F6319438535004EDB90 /* Brain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				D2855F44194232E0004EDB90 /* AppDelegate.swift */,
 				D2855F46194232E0004EDB90 /* ViewController.swift */,
+				D2855F6319438535004EDB90 /* Brain.swift */,
 				D2855F48194232E0004EDB90 /* Main.storyboard */,
 				D2855F4B194232E0004EDB90 /* Images.xcassets */,
 				D2855F42194232E0004EDB90 /* Supporting Files */,
@@ -209,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2855F47194232E0004EDB90 /* ViewController.swift in Sources */,
+				D2855F6419438535004EDB90 /* Brain.swift in Sources */,
 				D2855F45194232E0004EDB90 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

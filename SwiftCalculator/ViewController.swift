@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import CoreFoundation
 
 class ViewController: UIViewController {
-                            
+
+    @IBOutlet var inputLabel: UILabel
+    
+    var isTypingNumber = false
+    
+    let calcBrain = Brain()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,7 +26,67 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    var displayText: NSString = "" {
+    didSet {
+        inputLabel.text = displayText
+    }
+    }
+    
+    @IBAction func digitTapped(button: UIButton) {
+        
+        let value = button.titleLabel.text
+        
+        if inputLabel.text == "0" && value == "0" {
+            isTypingNumber = false
+            return
+        }
+        
+        if (isTypingNumber) {
+            if value != "." || value == "." && !displayText.containsString(".") {
+               displayText = displayText.stringByAppendingString(value)
+            }
+        } else {
+            displayText = value
+            isTypingNumber = true
+            calcBrain.setNotWaitingForOperand()
+        }
+        
+    }
+    
+    @IBAction func clearTapped() {
+        calcBrain.clearTapped()
+        displayText = "0"
+    }
+    
+    @IBAction func operationTapped(button: UIButton) {
+        let operation = button.titleLabel.text
+        
+        if (isTypingNumber) {
+            calcBrain.operand = inputLabel.text
+            isTypingNumber = false
+        }
+        
+        if (operation == "=") {
+            if !calcBrain.waitingForOperand {
+                calcBrain.operand = calcBrain.operand
+                isTypingNumber = false
+            } else {
+                calcBrain.operand = inputLabel.text
+            }
+        }
+        
+        var result = calcBrain.performOperation(operation)
 
-
-}
+        let value = result.bridgeToObjectiveC().floatValue
+        let int = result.bridgeToObjectiveC().integerValue
+        if (Double(value) - Double(int) == 0) {
+            // no floating
+            result = "\(result.bridgeToObjectiveC().integerValue)"
+        }
+        
+        displayText = result
+    }
+    
+} //EOF
 
